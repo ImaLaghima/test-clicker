@@ -151,6 +151,15 @@ namespace TestClicker
         {
             CoinBalance += CoinPerClick;
         }
+
+        public void ApplyUpgrade(float price, UpgradeType upgradeType, float effect)
+        {
+            CoinBalance -= price;
+            if (upgradeType == UpgradeType.ClickBoost)
+                CoinPerClick += effect;
+            else
+                CoinPerSecond += effect;
+        }
         
         #endregion
         

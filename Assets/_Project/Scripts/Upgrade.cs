@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 namespace TestClicker
 {
@@ -56,6 +57,12 @@ namespace TestClicker
         [TextArea(3, 10)]
         private string description;
         
+        [SerializeField]
+        private UpgradeType type;
+
+        [SerializeField]
+        private float effect;
+        
         #endregion
 
         #region Private Fields
@@ -99,12 +106,7 @@ namespace TestClicker
 
         #region Events & Delegates
 
-        // C#
-        // public delegate void TestDelegate(int number);
-        // public event TestDelegate MonoTestEvent;
-        // UnityEvent
-        // public UnityEvent<int> unityTestEvent = new UnityEvent<int>();
-        // public static UnityEvent<int> UnityStaticTestEvent = new UnityEvent<int>();
+        //
 
         #endregion
 
@@ -127,6 +129,8 @@ namespace TestClicker
 
         void OnEnable()
         {
+            _button.onClick.AddListener(BuyUpgrade);
+            RefreshGUI();
         }
 
         void Start()
@@ -135,10 +139,15 @@ namespace TestClicker
 
         void FixedUpdate()
         {
+            
         }
 
         void Update()
         {
+            if (GameManager.Instance.CoinBalance < price)
+                _button.interactable = false;
+            else
+                _button.interactable = true;
         }
 
         void LateUpdate()
@@ -147,6 +156,7 @@ namespace TestClicker
 
         void OnDisable()
         {
+            _button.onClick.RemoveListener(BuyUpgrade);
         }
 
         void OnDestroy()
@@ -178,15 +188,43 @@ namespace TestClicker
 
         #region Public Methods
 
-        // public static void SomeStaticMethod(){}
-        // public void SomePublicMethod(){}
+        public void Setup(UpgradeData data)
+        {
+            icon = data.icon;
+            title = data.title;
+            description = data.description;
+            price = data.price;
+            type = data.type;
+            effect = data.effect;
+            RefreshGUI();
+        }
+
+        public void Activate()
+        {
+            _button.interactable = true;
+        }
+
+        public void Deactivate()
+        {
+            _button.interactable = false;
+        }
 
         #endregion
 
         #region Private Methods
 
-        // private static void SomeStaticMethod(){}
-        // private void SomePublicMethod(){}
+        private void BuyUpgrade()
+        {
+            GameManager.Instance.ApplyUpgrade(price, type, effect);
+        }
+
+        private void RefreshGUI()
+        {
+            _icon.sprite = icon;
+            _title.text = title;
+            _description.text = description;
+            _price.text = price.ToString();
+        }
 
         #endregion
 
