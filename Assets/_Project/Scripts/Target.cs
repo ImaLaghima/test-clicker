@@ -10,8 +10,7 @@ namespace TestClicker
         {
             Vector2 mousePosition = Mouse.current.position.ReadValue();
             Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-
-            // Проверяем, попал ли луч в 2D-объект
+            
             RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
             if (hit.collider)
                 HandleClick();
@@ -21,6 +20,7 @@ namespace TestClicker
         {
             ObjectPooler.Instance.GetCoin(transform.position);
             GameManager.Instance.CountOneClick();
+            AudioManager.Instance.PlayCoinSFX();
         }
     }
 }

@@ -85,6 +85,7 @@ namespace TestClicker
         private void BuyUpgrade()
         {
             GameManager.Instance.ApplyUpgrade(price, type, effect);
+            AudioManager.Instance.PlayUpgradeSFX();
         }
 
         private void RefreshGUI()
