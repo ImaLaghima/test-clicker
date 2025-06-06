@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Passive Income 2
   m_EditorClassIdentifier: 
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  title: Passive Income 2
-  description: +3 Coin per Sec
+  title: title_7_key
+  description: description_7_key
   price: 20
   type: 1
   effect: 3

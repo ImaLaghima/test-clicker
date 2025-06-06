@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Click Boost 3
   m_EditorClassIdentifier: 
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  title: Click Boost 3
-  description: +5 Coin per Click
+  title: title_3_key
+  description: description_3_key
   price: 35
   type: 0
   effect: 5

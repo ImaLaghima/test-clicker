@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2fa39930372917449599130e0ebec23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinBalance: 10000
+  coinBalance: 0
   coinPerClick: 1
   coinPerSecond: 1
 --- !u!4 &170992321
@@ -1327,7 +1327,7 @@ Transform:
   m_GameObject: {fileID: 1154855729}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.45033, y: -0.42235, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1345,6 +1345,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976783629b3e6ab44ab9e867a1f2e13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultLanguage: English
+  localizationList:
+  - {fileID: 11400000, guid: 9fad009b1c42f8447b04cd086b1f21ab, type: 2}
+  - {fileID: 11400000, guid: ce77d7168d24afb40971ae316cb9a61b, type: 2}
 --- !u!1 &1164893566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,6 +2388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicAudioSource: {fileID: 1371793238}
+  interruptIfAllBusy: 1
   coinAudioSources:
   - {fileID: 951570078}
   - {fileID: 359083766}

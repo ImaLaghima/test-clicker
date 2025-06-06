@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1598cca735b204409cbc4305aae18db, type: 3}
+  m_Name: English
+  m_EditorClassIdentifier: 
+  flagSprite: {fileID: -5528894423819592419, guid: e305b85a4efa894479fa87301f84a173, type: 3}
+  englishLanguageName: English
+  nativeLanguageName: English
+  entries:
+  - key: title_1_key
+    value: click boost 1
+  - key: description_1_key
+    value: upgrade your click
+  - key: title_2_key
+    value: click boost 2
+  - key: description_2_key
+    value: upgrade your click
+  - key: title_3_key
+    value: click boost 3
+  - key: description_3_key
+    value: upgrade your click
+  - key: title_4_key
+    value: click boost 4
+  - key: description_4_key
+    value: upgrade your click
+  - key: title_5_key
+    value: click boost 5
+  - key: description_5_key
+    value: upgrade your click
+  - key: title_6_key
+    value: passive boost 6
+  - key: description_6_key
+    value: upgrade income
+  - key: title_7_key
+    value: passive boost 7
+  - key: description_7_key
+    value: upgrade income
+  - key: title_8_key
+    value: passive boost 8
+  - key: description_8_key
+    value: upgrade income
+  - key: title_9_key
+    value: passive boost 9
+  - key: description_9_key
+    value: upgrade income
+  - key: title_10_key
+    value: passive boost 10
+  - key: description_10_key
+    value: upgrade income

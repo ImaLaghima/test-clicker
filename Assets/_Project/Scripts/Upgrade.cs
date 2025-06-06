@@ -64,8 +64,8 @@ namespace TestClicker
         public void Setup(UpgradeData data)
         {
             icon = data.icon;
-            title = data.title;
-            description = data.description;
+            title = LocalizationManager.Instance.GetLocalizedText(data.title);
+            description = LocalizationManager.Instance.GetLocalizedText(data.description);
             price = data.price;
             type = data.type;
             effect = data.effect;
