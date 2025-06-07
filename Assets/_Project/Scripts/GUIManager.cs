@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UIElements;
 
 namespace TestClicker
 {
@@ -7,15 +8,11 @@ namespace TestClicker
     public class GUIManager : MonoBehaviour
     {
         public static GUIManager Instance { get; private set; }
-
-        [SerializeField]
-        private TextMeshProUGUI coinBalance;
         
-        [SerializeField]
-        private TextMeshProUGUI coinPerClick;
-        
-        [SerializeField]
-        private TextMeshProUGUI coinPerSecond;
+        private UIDocument _uiDocument;
+        private Label _coinBalanceLabel;
+        private Label _coinPerClickLabel;
+        private Label _coinPerSecondLabel;
 
         void Awake()
         {
@@ -26,20 +23,28 @@ namespace TestClicker
             }
             Instance = this;
         }
+
+        void Start()
+        {
+            _uiDocument = GetComponent<UIDocument>();
+            _coinBalanceLabel = _uiDocument.rootVisualElement.Q<Label>("coin-balance");
+            _coinPerClickLabel = _uiDocument.rootVisualElement.Q<Label>("coin-per-click");
+            _coinPerSecondLabel = _uiDocument.rootVisualElement.Q<Label>("coin-per-sec");
+        }
         
         public void SetCoinBalance(float value)
         {
-            coinBalance.text = value.ToString();
+            _coinBalanceLabel.text = value.ToString();
         }
 
         public void SetCoinPerClick(float value)
         {
-            coinPerClick.text = value.ToString();
+            _coinPerClickLabel.text = value.ToString();
         }
 
         public void SetCoinPerSecond(float value)
         {
-            coinPerSecond.text = value.ToString();
+            _coinPerSecondLabel.text = value.ToString();
         }
     }
 }

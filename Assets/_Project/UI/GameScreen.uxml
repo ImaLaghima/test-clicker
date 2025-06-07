@@ -1,0 +1,14 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/GameScreen.uss?fileID=7433441132597879392&amp;guid=9ceb164625494204d9f0e5d77c404a88&amp;type=3#GameScreen" />
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-items: stretch; flex-basis: auto; justify-content: center; align-self: auto; align-content: center; padding-top: 16px; padding-right: 16px; padding-bottom: 16px; padding-left: 16px;">
+        <ui:VisualElement name="left-column" class="column" style="flex-grow: 1; width: auto; bottom: 0; right: 1539px; left: 0; top: 0; height: auto; align-items: stretch;">
+            <ui:Label text="Balance" enabled="true" name="coin-balance" class="income-info" style="height: 64px; width: auto; position: relative; font-size: 36px; -unity-text-align: middle-left; top: auto; left: auto; white-space: pre; -unity-font-style: bold;" />
+            <ui:Label text="CoinsPerClick" enabled="true" name="coin-per-click" class="income-info" style="height: 64px; width: auto; position: relative; font-size: 36px; -unity-text-align: middle-left; -unity-font-style: bold;" />
+            <ui:Label text="CoinsPerSec" enabled="true" name="coin-per-sec" class="income-info" style="height: 64px; width: auto; position: relative; font-size: 36px; -unity-text-align: middle-left; -unity-font-style: bold;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="center-column" class="column center-column" style="flex-grow: 1;" />
+        <ui:VisualElement name="right-column" class="column" style="flex-grow: 1;">
+            <ui:Label text="Shop" class="shop-title" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

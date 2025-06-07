@@ -1,0 +1,23 @@
+.income-info {
+    color: white;
+    font-size: 36px;
+    background-color: rgba(80, 80, 80, 0.65);
+    padding: 12px;
+}
+
+.column {
+    flex-basis: 25%;
+}
+
+.center-column {
+    flex: 50%;
+}
+
+.shop-title {
+    min-height: 64px;
+    font-size: 48px;
+    color: white;
+    background-color: rgba(80, 80, 80, 0.65);
+    -unity-text-align: middle-center;
+    -unity-font-style: bold;
+}
