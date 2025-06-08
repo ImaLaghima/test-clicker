@@ -6,12 +6,23 @@ namespace TestClicker
     [DisallowMultipleComponent]
     public class Coin : MonoBehaviour
     {
+        [SerializeField]
+        private float force = 20;
+        
         private IObjectPool<GameObject> _coinsPoolRef;
         private Rigidbody2D _rigidbody2d;
 
         void Awake()
         {
             _rigidbody2d = GetComponent<Rigidbody2D>();
+        }
+
+        void OnEnable()
+        {
+            _rigidbody2d.AddForce(
+                new Vector2(Random.Range(-20, 20), Random.Range(-20, 20)).normalized * force,
+                ForceMode2D.Impulse
+            );
         }
         
         void OnDisable()

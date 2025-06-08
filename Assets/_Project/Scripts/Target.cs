@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 namespace TestClicker
 {
@@ -8,6 +7,10 @@ namespace TestClicker
     public class Target : MonoBehaviour
     {
         private static readonly int PopT = Animator.StringToHash("Pop_t");
+        
+        [SerializeField]
+        private ParticleSystem clickEffect;
+        
         private Animator _animator;
 
         void Start()
@@ -22,15 +25,20 @@ namespace TestClicker
             
             RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
             if (hit.collider)
-                HandleClick();
-        }
-
-        public void HandleClick()
-        {
-            _animator.SetTrigger(PopT);
-            ObjectPooler.Instance.GetCoin(transform.position);
-            GameManager.Instance.CountOneClick();
-            AudioManager.Instance.PlayCoinSFX();
+            {
+                _animator.SetTrigger(PopT);
+                ObjectPooler.Instance.GetCoin(hit.point);
+                GameManager.Instance.CountOneClick();
+                AudioManager.Instance.PlayCoinSFX();
+                
+                var effect = Instantiate(
+                    clickEffect,
+                    hit.point,
+                    Quaternion.identity
+                );
+                effect.transform.SetParent(null);
+                effect.Play();
+            }
         }
     }
 }
