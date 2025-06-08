@@ -61,6 +61,12 @@ namespace TestClicker
                 IsInteractable = false;
         }
 
+        public void RefreshLocal()
+        {
+            _upgradeTitle.text = LocalizationManager.Instance.GetLocalizedText(_upgradeData.title);
+            _upgradeDescription.text = LocalizationManager.Instance.GetLocalizedText(_upgradeData.description);
+        }
+
         public void Activate()
         {
             IsInteractable = true;

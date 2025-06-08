@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UIElements;
 
 namespace TestClicker
@@ -21,7 +19,11 @@ namespace TestClicker
         private Label _coinBalanceLabel;
         private Label _coinPerClickLabel;
         private Label _coinPerSecondLabel;
+        private Label _shopTitle;
         private ScrollView _scrollView;
+
+        private Button _englishLocalButton;
+        private Button _spanishLocalButton;
         
         private List<UpgradeController> _upgradeControllers;
 
@@ -42,9 +44,37 @@ namespace TestClicker
             _coinPerClickLabel = _uiDocument.rootVisualElement.Q<Label>("coin-per-click");
             _coinPerSecondLabel = _uiDocument.rootVisualElement.Q<Label>("coin-per-sec");
             _scrollView = _uiDocument.rootVisualElement.Q<ScrollView>("scroll-view");
+            _shopTitle = _uiDocument.rootVisualElement.Q<Label>("shop-title");
+            _shopTitle.text = LocalizationManager.Instance.GetLocalizedText("shop_title_key");
+            
+            _englishLocalButton = _uiDocument.rootVisualElement.Q<Button>("english-local-button");
+            _englishLocalButton.RegisterCallback<ClickEvent>((ClickEvent evt) => {
+                LocalizationManager.Instance.SetLanguage("English");
+                RefreshLocal();
+            });
+            _spanishLocalButton = _uiDocument.rootVisualElement.Q<Button>("spanish-local-button");
+            _spanishLocalButton.RegisterCallback<ClickEvent>((ClickEvent evt) => {
+                LocalizationManager.Instance.SetLanguage("Spanish");
+                RefreshLocal();
+            });
 
             _upgradeControllers = new List<UpgradeController>();
             PopulateScrollView();
+        }
+        
+        public void SetCoinBalance(float value)
+        {
+            _coinBalanceLabel.text = value.ToString();
+        }
+
+        public void SetCoinPerClick(float value)
+        {
+            _coinPerClickLabel.text = value.ToString();
+        }
+
+        public void SetCoinPerSecond(float value)
+        {
+            _coinPerSecondLabel.text = value.ToString();
         }
 
         private void Update()
@@ -54,7 +84,7 @@ namespace TestClicker
                 controller.UpdateItem(coinBalance);
         }
 
-        public void PopulateScrollView()
+        private void PopulateScrollView()
         {
             foreach (UpgradeData upgradeData in upgrades)
             {
@@ -73,20 +103,12 @@ namespace TestClicker
                 _scrollView.Add(upgradeVisualElement);
             }
         }
-        
-        public void SetCoinBalance(float value)
-        {
-            _coinBalanceLabel.text = value.ToString();
-        }
 
-        public void SetCoinPerClick(float value)
+        private void RefreshLocal()
         {
-            _coinPerClickLabel.text = value.ToString();
-        }
-
-        public void SetCoinPerSecond(float value)
-        {
-            _coinPerSecondLabel.text = value.ToString();
+            _shopTitle.text = LocalizationManager.Instance.GetLocalizedText("shop_title_key");
+            foreach (UpgradeController controller in _upgradeControllers)
+                controller.RefreshLocal();
         }
     }
 }

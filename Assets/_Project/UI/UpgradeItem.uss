@@ -6,27 +6,28 @@
 }
 
 .left-column {
-    
+    width: 20%;
 }
 
 .right-column {
-    
+    width: 80%;
 }
 
 .upgrade-title {
-    
+    -unity-text-align: middle-left;
 }
 
 .upgrade-description {
-    
+    -unity-text-align: upper-left;
 }
 
 .upgrade-price {
-    
+    -unity-text-align: middle-right;
 }
 
 .veil {
-    
+    transition-property: visibility;
+    transition-duration: 0.2s;
 }
 
 .veil-active {

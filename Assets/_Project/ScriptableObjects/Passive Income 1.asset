@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b131c5d814fd80f4ca988096ccaa3c01, type: 3}
   m_Name: Passive Income 1
   m_EditorClassIdentifier: 
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: ee420017df432d94b82de95d4efd4be8, type: 3}
   title: title_6_key
   description: description_6_key
   price: 10

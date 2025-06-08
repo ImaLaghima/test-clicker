@@ -10,51 +10,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1598cca735b204409cbc4305aae18db, type: 3}
-  m_Name: English
+  m_Name: Spanish
   m_EditorClassIdentifier: 
-  flagSprite: {fileID: -5528894423819592419, guid: e305b85a4efa894479fa87301f84a173, type: 3}
-  englishLanguageName: English
-  nativeLanguageName: English
+  flagSprite: {fileID: -4943824752338471872, guid: ac54fd363791ecb419428192b518f7e9, type: 3}
+  englishLanguageName: Spanish
+  nativeLanguageName: "Espa\xF1ol"
   entries:
   - key: title_1_key
-    value: click boost 1
+    value: Impulso al hacer clic 1
   - key: description_1_key
-    value: upgrade your click
+    value: Mejorar el clic 1
   - key: title_2_key
-    value: click boost 2
+    value: Impulso al hacer clic 2
   - key: description_2_key
-    value: upgrade your click
+    value: Mejorar el clic 2
   - key: title_3_key
-    value: click boost 3
+    value: Impulso al hacer clic 3
   - key: description_3_key
-    value: upgrade your click
+    value: Mejorar el clic 3
   - key: title_4_key
-    value: click boost 4
+    value: Impulso al hacer clic 4
   - key: description_4_key
-    value: upgrade your click
+    value: Mejorar el clic 4
   - key: title_5_key
-    value: click boost 5
+    value: Impulso al hacer clic 5
   - key: description_5_key
-    value: upgrade your click
+    value: Mejorar el clic 5
   - key: title_6_key
-    value: passive boost 6
+    value: Impulso de ingresos 1
   - key: description_6_key
-    value: upgrade income
+    value: Mejorar los ingresos 1
   - key: title_7_key
-    value: passive boost 7
+    value: Impulso de ingresos 2
   - key: description_7_key
-    value: upgrade income
+    value: Mejorar los ingresos 2
   - key: title_8_key
-    value: passive boost 8
+    value: Impulso de ingresos 3
   - key: description_8_key
-    value: upgrade income
+    value: Mejorar los ingresos 3
   - key: title_9_key
-    value: passive boost 9
+    value: Impulso de ingresos 4
   - key: description_9_key
-    value: upgrade income
+    value: Mejorar los ingresos 4
   - key: title_10_key
-    value: passive boost 10
+    value: Impulso de ingresos 5
   - key: description_10_key
-    value: upgrade income
+    value: Mejorar los ingresos 5
   - key: shop_title_key
-    value: Shop
+    value: Tienda

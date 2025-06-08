@@ -21,3 +21,21 @@
     -unity-text-align: middle-center;
     -unity-font-style: bold;
 }
+
+.local-button {
+    color: rgb(240, 240, 240);
+    background-color: rgb(60, 60, 60);
+    transition-duration: 0.2s;
+    border-width: 0;
+    font-size: 24px;
+}
+
+.local-button:hover {
+    color: rgb(240, 240, 240);
+    background-color: rgb(20, 20, 20);
+}
+
+.local-button:active {
+    color: rgb(255, 255, 255);
+    background-color: rgb(10, 10, 10);
+}
