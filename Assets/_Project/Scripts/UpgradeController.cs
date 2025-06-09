@@ -53,7 +53,7 @@ namespace TestClicker
             _upgradeVisualElement.RegisterCallback<ClickEvent>(OnItemClicked);
         }
 
-        public void UpdateItem(float coinBalance)
+        public void UpdateItem(double coinBalance)
         {
             if (coinBalance >= _upgradeData.price)
                 IsInteractable = true;

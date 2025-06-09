@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace TestClicker
@@ -6,29 +8,40 @@ namespace TestClicker
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; private set; }
+        
+        [Header("Game")]
+        [SerializeField]
+        private double coinBalance = 0;
 
         [SerializeField]
-        private float coinBalance = 0;
+        private double coinPerClick = 1.0f;
 
         [SerializeField]
-        private float coinPerClick = 1.0f;
+        private double coinPerSecond = 1.0f;
+
+        [Header("Saving")]
+        [SerializeField]
+        private bool loadSaveOnStart = true;
+        
+        [SerializeField]
+        private bool autoSaveEnabled = true;
 
         [SerializeField]
-        private float coinPerSecond = 1.0f;
+        private float saveEachSeconds = 5.0f;
 
-        public float CoinBalance
+        public double CoinBalance
         {
             private set => coinBalance = value;
             get => coinBalance;
         }
 
-        public float CoinPerClick
+        public double CoinPerClick
         {
             private set => coinPerClick = value;
             get => coinPerClick;
         }
 
-        public float CoinPerSecond
+        public double CoinPerSecond
         {
             private set => coinPerSecond = value;
             get => coinPerSecond;
@@ -44,6 +57,19 @@ namespace TestClicker
             Instance = this;
         }
 
+        void Start()
+        {
+            if (loadSaveOnStart && SaveManager.Instance.IsSaveFound)
+            {
+                SaveData saveData = SaveManager.Instance.GetSaveData();
+                CoinBalance = saveData.coinBalance;
+                CoinPerClick = saveData.coinPerClick;
+                CoinPerSecond = saveData.coinPerSecond;
+            }
+
+            StartCoroutine(SaveToFile());
+        }
+
         void Update()
         {
             CoinBalance += CoinPerSecond * Time.deltaTime;
@@ -56,6 +82,11 @@ namespace TestClicker
             GUIManager.Instance.SetCoinPerSecond(CoinPerSecond);
         }
 
+        private void OnDisable()
+        {
+            SaveGameProgress();
+        }
+
         public void CountOneClick()
         {
             CoinBalance += CoinPerClick;
@@ -66,8 +97,22 @@ namespace TestClicker
             CoinBalance -= price;
             if (upgradeType == UpgradeType.ClickBoost)
                 CoinPerClick += effect;
-            else
+            else if (upgradeType == UpgradeType.PassiveIncome)
                 CoinPerSecond += effect;
+        }
+
+        private void SaveGameProgress()
+        {
+            SaveManager.Instance.SaveToFile(CoinBalance, CoinPerClick, CoinPerSecond);
+        }
+
+        IEnumerator SaveToFile()
+        {
+            while (autoSaveEnabled)
+            {
+                yield return new WaitForSeconds(saveEachSeconds);
+                SaveGameProgress();
+            }
         }
     }
 }

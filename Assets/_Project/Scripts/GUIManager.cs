@@ -62,24 +62,24 @@ namespace TestClicker
             PopulateScrollView();
         }
         
-        public void SetCoinBalance(float value)
+        public void SetCoinBalance(double value)
         {
             _coinBalanceLabel.text = value.ToString();
         }
 
-        public void SetCoinPerClick(float value)
+        public void SetCoinPerClick(double value)
         {
             _coinPerClickLabel.text = value.ToString();
         }
 
-        public void SetCoinPerSecond(float value)
+        public void SetCoinPerSecond(double value)
         {
             _coinPerSecondLabel.text = value.ToString();
         }
 
         private void Update()
         {
-            float coinBalance = GameManager.Instance.CoinBalance;
+            double coinBalance = GameManager.Instance.CoinBalance;
             foreach (UpgradeController controller in _upgradeControllers)
                 controller.UpdateItem(coinBalance);
         }
