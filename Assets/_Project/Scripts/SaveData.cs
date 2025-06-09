@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace TestClicker
 {
-    [System.Serializable]
-    public class SaveData
+    [CreateAssetMenu(fileName = "UpgradeData", menuName = "Scriptable Objects/UpgradeData")]
+    public class SaveData : ScriptableObject
     {
         public double coinBalance;
         public double coinPerClick;

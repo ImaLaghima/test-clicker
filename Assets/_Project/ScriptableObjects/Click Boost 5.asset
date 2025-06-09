@@ -15,6 +15,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a5852f16cc40976488a41e6ceb2cb197, type: 3}
   title: title_5_key
   description: description_5_key
-  price: 666
+  price: 888
   type: 0
   effect: 100

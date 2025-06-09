@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/SplashScene.uss?fileID=7433441132597879392&amp;guid=2af5cd8cb4cf12d4a8283ae7323a89b4&amp;type=3#SplashScene" />
+    <ui:VisualElement name="background" style="flex-grow: 1; align-items: center; justify-content: center;">
+        <ui:VisualElement name="text-block" class="text-block" style="flex-grow: 0; align-items: center; justify-content: center; flex-shrink: 0; margin-bottom: 40px;">
+            <ui:Label text="Orange Clicker" name="title" class="title" style="-unity-font-style: bold; font-size: 64px; color: rgb(255, 96, 0); -unity-font-definition: url(&quot;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=2230732570650464555&amp;guid=10d39c93729841e489edbb5d0a585e25&amp;type=3#NotInter-Regular&quot;); -unity-text-outline-color: rgb(0, 0, 0);" />
+            <ui:Label text="by Ima Laghima" name="by-who" parse-escape-sequences="false" class="by-who" style="font-size: 24px; -unity-font-style: italic; color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+        <ui:ProgressBar value="22" name="progress-bar" title="Loading" class="progress-bar" style="width: 480px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; -unity-font-style: bold-and-italic; color: rgb(0, 0, 0); font-size: 18px;" />
+    </ui:VisualElement>
+</ui:UXML>
