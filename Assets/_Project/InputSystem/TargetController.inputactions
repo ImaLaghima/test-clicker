@@ -1,0 +1,51 @@
+{
+    "name": "TargetController",
+    "maps": [
+        {
+            "name": "TargetController",
+            "id": "2f0d4363-db49-4ccb-8266-a7adccc9fad9",
+            "actions": [
+                {
+                    "name": "TargetClick",
+                    "type": "Button",
+                    "id": "72defd19-0f61-4f02-9a07-800cb33865ab",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2cd8e911-8725-4022-b299-08335268394a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";PC",
+                    "action": "TargetClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "PC",
+            "bindingGroup": "PC",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
